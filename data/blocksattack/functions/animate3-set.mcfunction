@@ -1,1 +1,0 @@
-execute as @a run scoreboard players set @s animationstart 3

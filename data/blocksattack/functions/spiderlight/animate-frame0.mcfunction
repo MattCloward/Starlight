@@ -1,6 +1,3 @@
-# TODO remove
-# execute as @s run scoreboard players set @s animationstart 0
-
 # leg 1 left middle (0, 0, -25)
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display] run data merge entity @s {interpolation_duration:10,start_interpolation:-1,transformation:[0.906f, 0.423f, 0.000f, -0.15f,-0.423f, 0.906f, 0.000f, -0.4f,0.000f, 0.000f, 1.000f, -0.5f,0.000f, 0.000f, 0.000f,1.000f]}
 

@@ -1,6 +1,3 @@
-# TODO remove
-# execute as @s run scoreboard players set @s animationstart 0
-
 # leg 1 left middle (0, -10, -25)
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display] run data merge entity @s {interpolation_duration:5,start_interpolation:-1,transformation:[0.893f, 0.423f, -0.157f,-0.05f,-0.416f, 0.906f, 0.073f,-0.45f,0.174f, 0.000f, 0.985f,-0.5f,0.000f, 0.000f, 0.000f,1.000f]}
 
@@ -18,7 +15,3 @@ execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg5,type=block_di
 
 # # leg 6 right front (rotation: 0, -20, 25) TODO
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg6,type=block_display] run data merge entity @s {interpolation_duration:5,start_interpolation:-1,transformation:[0.852f, -0.423f, -0.310f,-0.55f,0.397f, 0.906f, -0.145f,-0.67f,0.342f, 0.000f, 0.940f,-0.950f,0.000f, 0.000f, 0.000f,1.000f]}
-
-# TODO remove
-# execute as @s at @s run schedule function blocksattack:animate2-set 5t
-# execute as @e[limit=1,sort=nearest,type=spider,tag=spider_light,nbt=!{Motion:[0.0,0.0,0.0]}] run schedule function blocksattack:animate2 5t
