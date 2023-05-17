@@ -1,0 +1,57 @@
+execute run effect give @s invisibility 999999 1 true
+execute run tag @s add spider_light
+
+# attacking brain
+execute at @s run summon husk ~-0.5 ~ ~-0.5 {Tags:["spider_light","brain"],Silent:1,IsBaby:1b}
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] mount @s
+execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] invisibility 999999 1 true
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] run data merge entity @s {DeathLootTable:"minecraft:blocks/ochre_froglight"}
+
+# body
+execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:ochre_froglight"},Tags:["spider_light","body"]}
+# execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=zombie]
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] mount @s
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] run data merge entity @s {transformation:{translation:[-0.5f,0f,-0.5f]}}
+
+# https://mlakuss.github.io/minecraft-display-entities-generator/
+
+# leg 1 left middle (rotation: 0, 0, -25)
+execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:end_rod",Properties:{facing:"east"}},Tags:["spider_light","leg1"]}
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display]
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display] run data merge entity @s {transformation:[0.906f, 0.423f, 0.000f, -0.15f,-0.423f, 0.906f, 0.000f, -0.4f,0.000f, 0.000f, 1.000f, -0.5f,0.000f, 0.000f, 0.000f,1.000f]}
+                                                                                                                                                            
+# leg 2 left back (rotation: 0, 30, -25)
+execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:end_rod",Properties:{facing:"east"}},Tags:["spider_light","leg2"]}
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=leg2,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display]
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg2,type=block_display] run data merge entity @s {transformation:[0.785f, 0.423f, 0.453f,-0.35f,-0.366f, 0.906f, -0.211f,-0.3f,-0.500f, 0.000f, 0.866f,-0.5f,0.000f, 0.000f, 0.000f,1.000f]}
+
+# leg 3 left front (rotation: 0, -30, -25)
+execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:end_rod",Properties:{facing:"east"}},Tags:["spider_light","leg3"]}
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=leg3,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=leg2,type=block_display]
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg3,type=block_display] run data merge entity @s {transformation:[0.785f, 0.423f, -0.453f,0.11f,-0.366f, 0.906f, 0.211f,-0.515f,0.500f, 0.000f, 0.866f,-0.35f,0.000f, 0.000f, 0.000f,1.000f]}
+
+# leg 4 right middle (rotation: 0, 0, 25)
+execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:end_rod",Properties:{facing:"west"}},Tags:["spider_light","leg4"]}
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=leg4,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=leg3,type=block_display]
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg4,type=block_display] run data merge entity @s {transformation:[0.906f, -0.423f, 0.000f,-0.75f,0.423f, 0.906f, 0.000f, -0.825f,0.000f, 0.000f, 1.000f, -0.5f,0.000f, 0.000f, 0.000f,1.000f]}
+
+# leg 5 right back (rotation: 0, 30, 25)
+execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:end_rod",Properties:{facing:"west"}},Tags:["spider_light","leg5"]}
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=leg5,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=leg4,type=block_display]
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg5,type=block_display] run data merge entity @s {transformation:[0.785f, -0.423f, 0.453f,-0.875f,0.366f, 0.906f, 0.211f,-0.875f,-0.500f, 0.000f, 0.866f,0.15f,0.000f, 0.000f, 0.000f,1.000f]}
+
+# leg 6 right front (rotation: 0, -30, 25)
+execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:end_rod",Properties:{facing:"west"}},Tags:["spider_light","leg6"]}
+execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=leg6,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=leg5,type=block_display]
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg6,type=block_display] run data merge entity @s {transformation:[0.785f, -0.423f, -0.453f, -0.425f,0.366f, 0.906f, -0.211f,-0.67f,0.500f, 0.000f, 0.866f,-1.0f,0.000f, 0.000f, 0.000f,1f]}
+
+
+# /execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display] run data merge entity @s {start_interpolation:-1,interpolation_duration:20,transformation:{right_rotation:[0f,0f,-0.25f,1f],translation:[-0.15f,-0.4f,-0.5f]}}
+
+
+# change loot table
+execute as @s at @s run data merge entity @s {DeathLootTable:"minecraft:blocks/ochre_froglight"}
+
+
+
+# summon spider ~ ~ ~ {NoAI:1b,Passengers:[{id:"minecraft:block_display",Passengers:[{id:"minecraft:block_display",block_state:{Name:"minecraft:end_rod",Properties:{facing:"down"}}}],transformation:{translation:[-0.5f,-0.25f,-0.5f]},block_state:{Name:"minecraft:pearlescent_froglight"}}]}
