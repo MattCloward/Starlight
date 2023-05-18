@@ -14,6 +14,3 @@ scoreboard objectives add blockfound dummy
 
 scoreboard objectives add blocksearchstart dummy
 scoreboard objectives add blocksearchcast dummy
-
-# TODO remove
-scoreboard objectives add animationstart dummy
