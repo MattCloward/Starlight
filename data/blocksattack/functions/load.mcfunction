@@ -14,3 +14,6 @@ scoreboard objectives add blockfound dummy
 
 scoreboard objectives add blocksearchstart dummy
 scoreboard objectives add blocksearchcast dummy
+
+scoreboard objectives add spiderlightrand dummy
+scoreboard objectives add modop dummy
