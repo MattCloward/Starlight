@@ -9,10 +9,13 @@ execute run function blocksattack:spiderlight/spidermobtick
 
 # if a spiderlight mob moves, set a tag that it is moving (see animatetick1 and animatetick 2 for what this causes)
 execute as @e[type=spider,tag=spider_light,nbt=!{Motion:[0.0,0.0,0.0]}] run tag @s add moving 
-# if the spider light has stopped moving, but still has the moving tag, set its animation to the default frame
+# if the spider light has stopped moving, but still has the moving tag, make it hide
 execute as @e[type=spider,tag=spider_light,tag=moving,nbt={Motion:[0.0,0.0,0.0]}] run function blocksattack:spiderlight/animate-frame0
+# if the spider light has stopped moving, but still has the moving tag, make it face a cardinal direction
+execute as @e[type=spider,tag=spider_light,tag=moving,nbt={Motion:[0.0,0.0,0.0]}] at @s run tp @s ~ ~ ~ 0 0
 # if the spider light has stopped moving, remove the moving tag
 execute as @e[type=spider,tag=spider_light,nbt={Motion:[0.0,0.0,0.0]}] run tag @s remove moving
+
 
 # remove light blocks everywhere around spiderlight brains
 execute as @e[type=husk,tag=spider_light] at @s run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 air replace minecraft:light

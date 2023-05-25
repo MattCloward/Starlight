@@ -1,3 +1,6 @@
+# body
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] run data merge entity @s {interpolation_duration:2,start_interpolation:-1,transformation:[1.000f, 0.000f, 0.000f,-0.500f,0.000f, 1.000f, 0.000f,0.0f,0.000f, 0.000f, 1.000f,-0.500f,0.000f, 0.000f, 0.000f,1.000f]}
+
 # leg 1 left middle (0, 10, -25)
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display] run data merge entity @s {interpolation_duration:5,start_interpolation:-1,transformation:[0.893f, 0.423f, 0.157f,-0.15f,-0.416f, 0.906f, -0.073f,-0.35f,-0.174f, 0.000f, 0.985f,-0.5f,0.000f, 0.000f, 0.000f,1.000f]}
 
