@@ -1,0 +1,4 @@
+# summon a star creeper
+execute as @s run summon creeper ~ ~ ~ {Passengers:[{id:"minecraft:block_display",block_state:{Name:"sculk"},transformation:[0.5f,0f,0f,0.25f,0f,0.5f,0f,1.125f,0f,0f,0.5f,0.25f,0f,0f,0f,1f]},{id:"minecraft:block_display",block_state:{Name:"sculk"},transformation:[0.25f,0f,0f,0.375f,0f,0.75f,0f,0.375f,0f,0f,0.5f,0.25f,0f,0f,0f,1f]},{id:"minecraft:block_display",block_state:{Name:"sculk"},transformation:[0.25f,0f,0f,0.625f,0f,0.375f,0f,0f,0f,0f,0.25f,0.25f,0f,0f,0f,1f]},{id:"minecraft:block_display",block_state:{Name:"sculk"},transformation:[0.25f,0f,0f,0.625f,0f,0.375f,0f,0f,0f,0f,0.25f,0.5f,0f,0f,0f,1f]},{id:"minecraft:block_display",block_state:{Name:"sculk"},transformation:[0.25f,0f,0f,0.125f,0f,0.375f,0f,0f,0f,0f,0.25f,0.5f,0f,0f,0f,1f]},{id:"minecraft:block_display",block_state:{Name:"sculk"},transformation:[0.25f,0f,0f,0.125f,0f,0.375f,0f,0f,0f,0f,0.25f,0.25f,0f,0f,0f,1f]}]}
+
+execute as @s run scoreboard players reset @s test

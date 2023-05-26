@@ -17,3 +17,6 @@ scoreboard objectives add blocksearchcast dummy
 
 scoreboard objectives add spiderlightrand dummy
 scoreboard objectives add modop dummy
+
+# used to keep track of the age of xp orbs and bloom removers
+scoreboard objectives add entityAge dummy
