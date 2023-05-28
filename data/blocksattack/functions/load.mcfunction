@@ -5,8 +5,6 @@
 # say I'm working great!
 
 function blocksattack:tick
-# for spawning stuff
-function blocksattack:spawntick
 # function blocksattack:secondtick
 function blocksattack:animatetick1
 
@@ -20,3 +18,5 @@ scoreboard objectives add modop dummy
 
 # used to keep track of the age of xp orbs and bloom removers
 scoreboard objectives add entityAge dummy
+
+scoreboard objectives add onSculkTimer dummy

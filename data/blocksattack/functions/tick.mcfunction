@@ -37,3 +37,11 @@ execute as @e[type=experience_orb,scores={entityAge=200..}] at @s run function b
 # add age to bloom removers- when they get old enough, remove the catalyst and spawn a fang
 execute as @e[type=block_display,tag=bloom_remover] run scoreboard players add @s entityAge 1
 execute as @e[type=block_display,scores={entityAge=100..}] at @s run function blocksattack:bloom-remove
+
+# while players are on top of sculk, decrement their timer
+execute at @a if block ~ ~-1 ~ sculk run scoreboard players remove @a[sort=nearest,limit=1] onSculkTimer 1
+# if the player is not on top of sculk, reset their timer
+execute at @a unless block ~ ~-1 ~ sculk run scoreboard players set @a[sort=nearest,limit=1] onSculkTimer 200
+# if the player's sculk timer dips below 0, make the sculk block below them come alive and reset their timer
+execute at @a[scores={onSculkTimer=..0}] run function blocksattack:blockmob/spawnsculkling
+
