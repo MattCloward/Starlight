@@ -26,6 +26,3 @@ execute as @e[type=block_display,tag=block_mob] at @s run data modify entity @s 
 execute as @e[type=block_display,tag=block_mob,predicate=!blocksattack:is_riding_vehicle] run kill @s
 # if a magma_cube doesn't have a block display, creates another one
 # execute as @e[type=magma_cube,tag=block_mob] at @s unless entity @e[tag=block_mob,type=block_display,distance=..2] run function blocksattack:blockmob/spawnblock
-
-# make magma_cubes tp to player's head if they get too close
-execute at @p[gamemode=!spectator,gamemode=!creative] anchored eyes if entity @e[type=magma_cube,tag=block_mob,distance=..1.75,sort=nearest] run function blocksattack:blockmob/attachtoplayer
