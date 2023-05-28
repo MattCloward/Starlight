@@ -1,5 +1,7 @@
 # spawn a sculk catalyst
 execute at @s run fill ~ ~ ~ ~ ~ ~ sculk_catalyst keep
+# make the block below the sculk catalyst be sculk too
+execute at @s if block ~ ~-1 ~ #sculk_replaceable run setblock ~ ~-1 ~ sculk
 # summon a baby zombie that is silent, invisible, and doesn't drop anything
 execute at @s run summon zombie ~1 ~ ~1 {Tags:["bloom"],Silent:1b,ActiveEffects:[{Id:14,Duration:100,ShowParticles:0b}],DeathLootTable:"minecraft:empty",IsBaby:1b}
 # kill the baby zombie in the presence of the catalyst (OVERKILL)
