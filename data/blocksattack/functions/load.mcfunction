@@ -14,6 +14,7 @@ scoreboard objectives add blocksearchstart dummy
 scoreboard objectives add blocksearchcast dummy
 
 scoreboard objectives add spiderlightrand dummy
+# the mod operator for the random block chosen for the spiderlight (set to 3 later)
 scoreboard objectives add modop dummy
 
 # used to keep track of the age of xp orbs and bloom removers
