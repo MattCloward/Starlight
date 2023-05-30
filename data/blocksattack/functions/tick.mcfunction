@@ -39,13 +39,13 @@ execute as @e[type=block_display,tag=bloom_remover] run scoreboard players add @
 execute as @e[type=block_display,scores={entityAge=100..}] at @s run function blocksattack:bloom-remove
 
 # while players are on top of sculk, decrement their timer
-execute at @a if block ~ ~-1 ~ sculk run scoreboard players remove @a[sort=nearest,limit=1] onSculkTimer 1
+execute at @a[gamemode=!creative,gamemode=!spectator] if block ~ ~-1 ~ sculk run scoreboard players remove @a[sort=nearest,limit=1] onSculkTimer 1
 # if the block below isn't sculk but the block below that is...
-execute at @a unless block ~ ~-1 ~ sculk if block ~ ~-2 ~ sculk run scoreboard players remove @a[sort=nearest,limit=1] onSculkTimer 1
+execute at @a[gamemode=!creative,gamemode=!spectator] unless block ~ ~-1 ~ sculk if block ~ ~-2 ~ sculk run scoreboard players remove @a[sort=nearest,limit=1] onSculkTimer 1
 # if the player is not on top of sculk, reset their timer
-execute at @a unless block ~ ~-1 ~ sculk unless block ~ ~-2 ~ sculk run scoreboard players set @a[sort=nearest,limit=1] onSculkTimer 200
+execute at @a[gamemode=!creative,gamemode=!spectator] unless block ~ ~-1 ~ sculk unless block ~ ~-2 ~ sculk run scoreboard players set @a[sort=nearest,limit=1] onSculkTimer 200
 # if the player's sculk timer dips below 0, make the sculk around them come alive and reset their timer
-execute at @a[scores={onSculkTimer=..0}] if block ~ ~-1 ~ sculk run function blocksattack:blockmob/spawnsculkling
+execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] if block ~ ~-1 ~ sculk run function blocksattack:blockmob/spawnsculkling
 # if the player is jumping, still spawn the sculklings
-execute at @a[scores={onSculkTimer=..0}] unless block ~ ~-1 ~ sculk if block ~ ~-2 ~ sculk positioned ~ ~-1 ~ run function blocksattack:blockmob/spawnsculkling
+execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] unless block ~ ~-1 ~ sculk if block ~ ~-2 ~ sculk positioned ~ ~-1 ~ run function blocksattack:blockmob/spawnsculkling
 
