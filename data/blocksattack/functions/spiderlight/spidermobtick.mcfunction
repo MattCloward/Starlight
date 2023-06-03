@@ -1,4 +1,6 @@
-execute as @e[type=spider,tag=!spider_light] run function blocksattack:spiderlight/spawnspiderlight
+# debug command that turns all spiders into spiderlights
+# spiderlights are currently only created in ray/replace
+# execute as @e[type=spider,tag=!spider_light] run function blocksattack:spiderlight/spawnspiderlight
 
 
 # rotates block displays to match spiders
