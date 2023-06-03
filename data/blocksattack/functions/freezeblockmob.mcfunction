@@ -1,5 +1,5 @@
-data merge entity @s {NoAI:1b}
-# teleport the slime to the nearest block
+data merge entity @s {NoAI:1b,Silent:1b}
+# teleport the mob to the nearest block
 execute as @s at @s align xyz positioned ^ ^ ^ run tp @s ~0.5 ~ ~0.5 90 0
 # teleport them to the ground
 execute as @s at @s if block ~ ~-1 ~ air run teleport @s ~ ~-1 ~
