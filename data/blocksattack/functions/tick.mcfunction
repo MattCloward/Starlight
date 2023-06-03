@@ -35,8 +35,8 @@ execute as @e[type=enderman] run data merge entity @s {Health:0.0f, Silent:1b, D
 execute as @e[type=experience_orb] run scoreboard players add @s entityAge 1
 execute as @e[type=experience_orb,scores={entityAge=200..}] at @s run function blocksattack:bloom
 # add age to bloom removers- when they get old enough, remove the catalyst and spawn a fang
-execute as @e[type=block_display,tag=bloom_remover] run scoreboard players add @s entityAge 1
-execute as @e[type=block_display,scores={entityAge=100..}] at @s run function blocksattack:bloom-remove
+execute as @e[type=block_display,tag=bloom_remover,tag=not_activated] run scoreboard players add @s entityAge 1
+execute as @e[type=block_display,tag=bloom_remover,tag=not_activated,scores={entityAge=100..}] at @s run function blocksattack:bloom-remove
 
 # while players are on top of sculk, decrement their timer
 execute at @a[gamemode=!creative,gamemode=!spectator] if block ~ ~-1 ~ sculk run scoreboard players remove @a[sort=nearest,limit=1] onSculkTimer 1

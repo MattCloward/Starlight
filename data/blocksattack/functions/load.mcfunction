@@ -21,3 +21,8 @@ scoreboard objectives add modop dummy
 scoreboard objectives add entityAge dummy
 
 scoreboard objectives add onSculkTimer dummy
+
+# controls the search radius around the bloom-removers
+scoreboard objectives add xStep dummy
+scoreboard objectives add yStep dummy
+scoreboard objectives add zStep dummy
