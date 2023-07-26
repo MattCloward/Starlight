@@ -5,8 +5,8 @@
 # say I'm working great!
 
 function blocksattack:tick
-# function blocksattack:secondtick
 function blocksattack:animatetick1
+function blocksattack:tumor-boss/tick
 
 scoreboard objectives add blockfound dummy
 
@@ -26,3 +26,20 @@ scoreboard objectives add onSculkTimer dummy
 scoreboard objectives add xStep dummy
 scoreboard objectives add yStep dummy
 scoreboard objectives add zStep dummy
+
+# create a decay timer objective, set the fake player #decay's objective to exist,
+# then check if they have a score and set it to a default value if they don't
+# this is used to check how often blocks should decay around players
+scoreboard objectives add decayTimer dummy
+scoreboard players add #decay decayTimer 0
+execute if score decay decayTimer matches 0 run scoreboard players set #decay decayTimer 200
+
+# whether a block has decayed or not near the player
+scoreboard objectives add hasDecayed dummy
+
+# bone spike scoreboard objectivs
+scoreboard objectives add bonecast dummy
+scoreboard objectives add bonestart dummy
+
+# used to store positions of entities
+scoreboard objectives add pos dummy
