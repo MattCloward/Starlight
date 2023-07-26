@@ -2,7 +2,7 @@ execute run effect give @s invisibility 999999 1 true
 execute run tag @s add spider_light
 
 # attacking brain
-execute at @s run summon husk ~-0.5 ~ ~-0.5 {Tags:["spider_light","brain"],Silent:1b,IsBaby:1b}
+execute at @s run summon husk ~-0.5 ~ ~-0.5 {Tags:["spider_light","brain"],Silent:1b,IsBaby:1b,PersistenceRequired:1b}
 execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] mount @s
 execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] invisibility 999999 1 true
 # get a random value for the spawned spider (world time)
