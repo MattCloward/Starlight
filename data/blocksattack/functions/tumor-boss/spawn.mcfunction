@@ -7,7 +7,7 @@ execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] res
 # attach the sticks where the shifter hangs
 summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","stick1"],block_state:{Name:"minecraft:sculk_catalyst",Properties:{}},transformation:[1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,-15.0000f,0.0000f,19.0000f,0.0000f,-0.0000f,-1.0000f,2.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=stick1] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
-summon interaction ~1 ~3 ~1 {height:16,response:true,Tags:["shifter","stick1"]}
+summon interaction ~2.5 ~3 ~2.5 {height:16,response:true,Tags:["shifter","stick1"]}
 summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","stick2"],block_state:{Name:"minecraft:sculk_catalyst",Properties:{}},transformation:[1.0000f,0.0000f,0.0000f,3.0000f,0.0000f,-15.0000f,0.0000f,19.0000f,0.0000f,-0.0000f,-1.0000f,4.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=stick2] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
 summon interaction ~3 ~3 ~3 {height:16,response:true,Tags:["shifter","stick2"]}
