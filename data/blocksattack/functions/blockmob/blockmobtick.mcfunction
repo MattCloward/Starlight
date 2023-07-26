@@ -5,9 +5,12 @@ execute as @e[type=magma_cube,nbt={Size:1},tag=!block_mob] run function blocksat
 execute as @e[type=magma_cube,nbt={Size:0}] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:"minecraft:empty"}
 
 # freeze block if not close to player
-execute as @e[type=magma_cube,tag=block_mob] at @s if entity @p[limit=1,sort=nearest,distance=10..,gamemode=!spectator] run function blocksattack:freezeblockmob
+execute as @e[type=magma_cube,tag=block_mob] at @s if entity @p[limit=1,sort=nearest,distance=16..,gamemode=!spectator] run function blocksattack:freezeblockmob
 # unfreeze block entity if close to player
-execute as @e[type=magma_cube,tag=block_mob] at @s if entity @p[limit=1,sort=nearest,distance=..10,gamemode=!spectator] run data merge entity @s {NoAI:0b,Silent:0b}
+execute as @e[type=magma_cube,tag=block_mob] at @s if entity @p[limit=1,sort=nearest,distance=..16,gamemode=!spectator] run data merge entity @s {NoAI:0b,Silent:0b}
+
+# make blocks float if airborn
+execute as @e[type=magma_cube,tag=block_mob] at @s if block ~ ~-1 ~ air run effect give @s minecraft:slow_falling 10 6
 
 # rotates block displays to match magma_cubes
 execute as @e[type=block_display,tag=block_mob] at @s run data modify entity @s Rotation set from entity @e[type=magma_cube,tag=block_mob,limit=1,sort=nearest] Rotation
