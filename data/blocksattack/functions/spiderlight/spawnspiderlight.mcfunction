@@ -22,7 +22,6 @@ execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] i
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=1}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:pearlescent_froglight"},Tags:["spider_light","body"]}
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=2}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:verdant_froglight"},Tags:["spider_light","body"]}
 
-# execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] mount @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=zombie]
 execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] mount @s
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] run data merge entity @s {transformation:[1.000f, 0.000f, 0.000f,-0.500f,0.000f, 1.000f, 0.000f,-0.500f,0.000f, 0.000f, 1.000f,-0.500f,0.000f, 0.000f, 0.000f,1.000f]}
 
