@@ -25,10 +25,10 @@ execute as @e[type=husk,tag=spider_light] at @s run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 ai
 # put light blocks behind all spiderlights
 execute as @e[type=spider,tag=spider_light] at @s run fill ~ ~ ~ ~ ~ ~ light[level=15] keep
 
-# execute as @e[type=slime] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
-execute as @e[type=skeleton] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
+execute as @e[type=slime] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
+# execute as @e[type=skeleton] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
 # execute as @e[type=creeper] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
-execute as @e[type=enderman] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
+# execute as @e[type=enderman] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
 # execute as @e[type=zombie] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
 
 # add age to xp orbs- when they get old enough, spawn bloom
@@ -49,3 +49,22 @@ execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] 
 # if the player is jumping, still spawn the sculklings
 execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] unless block ~ ~-1 ~ sculk if block ~ ~-2 ~ sculk positioned ~ ~-1 ~ run function blocksattack:blockmob/spawnsculkling
 
+# commands for decaying blocks
+# execute as @e[type=falling_block,tag=decaying_block] at @s run data merge entity @s {Motion:[0d,0.01d]}
+execute as @e[type=falling_block,tag=decaying_block] run scoreboard players add @s entityAge 1
+# while the entity is alive, make it emit smoke
+execute as @e[type=falling_block,tag=decaying_block,scores={entityAge=..200}] at @s run particle minecraft:smoke ~ ~.5 ~ .5 .5 .5 .01 1
+execute as @e[type=falling_block,tag=decaying_block,scores={entityAge=200..}] at @s run function blocksattack:decay/terminate_decay
+# add age to player
+# TODO fix this- permissions might not work
+execute as @a run scoreboard players add @s entityAge 1
+# check if the player's score is greater than the set decay timer
+execute as @a if score @s entityAge > #decay decayTimer run function blocksattack:decay/decay_ray/start
+
+# start bone spike ray
+execute as @e[scores={bonestart=1..}] at @s run function blocksattack:tumor-boss/bone-spike/test-start
+# execute as @e[scores={bonestart=1..}] at @s run function blocksattack:tumor-boss/bone-spike/ray-start
+
+
+# TODO remove
+execute as @e[type=zombie] at @s run tp @s ~ ~ ~ facing entity @a[limit=1,sort=nearest]
