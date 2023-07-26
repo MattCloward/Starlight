@@ -16,5 +16,28 @@ execute as @e[tag=shifter,tag=brain] store result bossbar shifter max run attrib
 execute as @e[tag=shifter,tag=brain] store result bossbar shifter value run data get entity @s Health
 execute unless entity @e[limit=1,sort=nearest,tag=shifter,tag=brain] run bossbar remove shifter
 
+# break all blocks within the boss
+execute as @e[tag=shifter,tag=brain] at @s positioned ~2 ~2 ~2 run fill ~-2 ~-3 ~-2 ~4 ~4 ~4 air destroy
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~ ~ run fill ~ ~ ~ ~ ~7 ~ air destroy
+execute as @e[type=block_display,tag=shifter,tag=stick2] at @s positioned ~ ~ ~ run fill ~ ~ ~ ~ ~7 ~ air destroy
+
+# if player touches a block display, damage them
+execute as @e[tag=shifter,tag=brain] at @s positioned ~2 ~2 ~2 if entity @a[distance=..4,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~4 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~6 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~8 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~10 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~12 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~14 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~16 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+
+execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~4 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~6 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~8 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~10 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~12 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~14 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~16 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+
 
 # TODO if arrow gets close, warn players that arrows phase right through this boss
