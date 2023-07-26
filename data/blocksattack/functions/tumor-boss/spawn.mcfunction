@@ -1,6 +1,8 @@
 # the brain of the shifter
-summon ocelot ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","brain"],Silent:1b,NoAI:1b}
+summon ocelot ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","brain"],Silent:1b,NoAI:1b,PersistenceRequired:1b}
 execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] invisibility 999999 1 true
+execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] resistance 999999 5 true
+
 
 # attach the sticks where the shifter hangs
 summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","stick1"],block_state:{Name:"minecraft:sculk_catalyst",Properties:{}},transformation:[1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,-15.0000f,0.0000f,19.0000f,0.0000f,-0.0000f,-1.0000f,2.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}

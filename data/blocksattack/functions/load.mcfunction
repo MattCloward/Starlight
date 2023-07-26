@@ -36,3 +36,5 @@ execute if score decay decayTimer matches 0 run scoreboard players set #decay de
 
 # whether a block has decayed or not near the player
 scoreboard objectives add hasDecayed dummy
+
+scoreboard objectives add health dummy
