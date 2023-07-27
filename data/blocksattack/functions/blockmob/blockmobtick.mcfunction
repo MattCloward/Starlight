@@ -10,7 +10,7 @@ execute as @e[type=magma_cube,tag=block_mob] at @s if entity @p[limit=1,sort=nea
 execute as @e[type=magma_cube,tag=block_mob] at @s if entity @p[limit=1,sort=nearest,distance=..16,gamemode=!spectator] run data merge entity @s {NoAI:0b,Silent:0b}
 
 # make blocks float if airborn
-execute as @e[type=magma_cube,tag=block_mob] at @s if block ~ ~-1 ~ air run effect give @s minecraft:slow_falling 10 6
+execute as @e[type=magma_cube,tag=block_mob] at @s if block ~ ~-1 ~ air run effect give @s minecraft:slow_falling 10 7 true
 
 # rotates block displays to match magma_cubes
 execute as @e[type=block_display,tag=block_mob] at @s run data modify entity @s Rotation set from entity @e[type=magma_cube,tag=block_mob,limit=1,sort=nearest] Rotation
