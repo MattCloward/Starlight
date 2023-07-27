@@ -28,7 +28,6 @@ execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~8 ~ i
 execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~10 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~12 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~14 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
-execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~16 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 
 execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~4 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~6 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
@@ -36,7 +35,6 @@ execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~8 ~ i
 execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~10 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~12 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~14 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
-execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~16 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 
 # if the brain has one health, start the next phase
 execute as @e[tag=shifter,tag=brain,tag=phase1,scores={health=1}] run function blocksattack:tumor-boss/startsecondphase 
