@@ -1,5 +1,5 @@
 # the brain of the shifter
-summon magma_cube ~-0.5 ~-0.5 ~-0.5 {Size:8,Tags:["shifter","brain","phase1"],Silent:1b,NoAI:1b,PersistenceRequired:1b}
+summon magma_cube ~-0.5 ~-0.5 ~-0.5 {Size:8,Tags:["shifter","brain","phase1"],Silent:1b,NoAI:1b,PersistenceRequired:1b,DeathLootTable:""}
 execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] invisibility 999999 1 true
 execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] resistance 999999 5 true
 
@@ -36,5 +36,5 @@ summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","eye_pupil"],block_state
 ride @e[limit=1,sort=nearest,tag=shifter,tag=eye_pupil] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
 
 
-bossbar add shifter {"text":"Starlight Tumor"}
-bossbar set shifter color purple
+bossbar add shifter {"text":"Starlight Tumor","color":"Purple","bold":true}
+bossbar set shifter style notched_20
