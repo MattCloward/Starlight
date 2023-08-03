@@ -10,7 +10,7 @@ execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~2 ~ r
 execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~2 ~ run fill ~-1 ~ ~-1 ~1 ~5 ~1 air destroy
 
 # if player touches a block display, damage them
-execute as @e[tag=shifter,tag=brain] at @s positioned ~2 ~2 ~2 if entity @a[distance=..4,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
+execute as @e[tag=shifter,tag=brain,tag=phase1] at @s positioned ~ ~2 ~ if entity @a[distance=..3,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~4 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~6 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 execute as @e[type=interaction,tag=shifter,tag=stick1] at @s positioned ~ ~8 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
