@@ -1,10 +1,14 @@
 execute run effect give @s invisibility 999999 1 true
+execute run effect give @s strength 999999 2 true
 execute run tag @s add spider_light
+execute run data merge entity @s {CustomName:'[{"text":"Spiderlight","color":"gold","italic":true}]'}
 
 # attacking brain
-execute at @s run summon husk ~-0.5 ~ ~-0.5 {Tags:["spider_light","brain"],Silent:1b,IsBaby:1b,PersistenceRequired:1b}
+execute at @s run summon husk ~-0.5 ~ ~-0.5 {Tags:["spider_light","brain"],Silent:1b,IsBaby:1b,PersistenceRequired:1b,CustomName:'[{"text":"Spiderlight","color":"gold","italic":true}]'}
 execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] mount @s
 execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] invisibility 999999 1 true
+execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] strength 999999 2 true
+
 # get a random value for the spawned spider (world time)
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] store result score @s spiderlightrand run time query gametime
 # set the mod divider to 3

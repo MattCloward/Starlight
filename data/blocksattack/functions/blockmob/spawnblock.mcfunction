@@ -2,6 +2,7 @@ execute run effect give @s invisibility 999999 1 true
 execute run tag @s add block_mob
 execute run effect give @s strength 999999 2 true
 execute run effect give @s speed 999999 5 true
+execute run data merge entity @s {CustomName:'[{"text":"Sentient Starlight","color":"blue","italic":true}]'}
 execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:sculk"},Tags:["block_mob"]}
 execute at @s run ride @e[limit=1,tag=block_mob,type=block_display,predicate=!blocksattack:is_riding_vehicle] mount @s
 execute at @s as @e[limit=1,sort=nearest,tag=block_mob,type=block_display,predicate=blocksattack:is_riding_vehicle] run data merge entity @s {transformation:{translation:[-0.5f,-0.78f,-0.5f]}}
