@@ -2,7 +2,10 @@
 execute at @e[tag=shifter,tag=brain] as @e[distance=..5,tag=shifter,type=interaction] run data remove entity @s attack
 
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] store result score @s health run data get entity @s Health
+# in phase 1, health must be taken via the scoreboard because of high restistance
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] run scoreboard players remove @s health 1
+# in phase two, knockback is additionally dealt (not sure why this doesn't also do damage)
+execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain,tag=phase2] run damage @s 1 player_attack by @a[sort=nearest,limit=1]
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] store result entity @s Health float 1 run scoreboard players get @s health
 
 # play sounds
