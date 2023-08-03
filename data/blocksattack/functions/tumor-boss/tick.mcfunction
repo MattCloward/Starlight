@@ -3,9 +3,11 @@ schedule function blocksattack:tumor-boss/tick 1t
 # rotate all block displays in the direction the brain is facing
 execute as @e[type=block_display,tag=shifter,tag=phase2] at @s run data modify entity @s Rotation set from entity @e[type=magma_cube,tag=shifter,tag=brain,limit=1,sort=nearest] Rotation
 
-# check if sticks have been hit
+# check if interactions have been hit
 execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=stick1,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
 execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=stick2,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
+execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=bodyinteraction,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
+
 
 # kill all block displays and interactions not attached to the boss brain
 execute as @e[type=block_display,tag=shifter,predicate=!blocksattack:is_riding_vehicle] at @s run function blocksattack:tumor-boss/kill
@@ -25,3 +27,6 @@ execute as @e[tag=shifter,tag=brain] store result bossbar shifter value run data
 execute as @e[tag=shifter,tag=brain,tag=phase1,scores={health=1}] run function blocksattack:tumor-boss/startsecondphase 
 
 # TODO if arrow gets close, warn players that arrows phase right through this boss
+
+# teleport the interaction entity to the phase 2 brain
+execute as @e[type=magma_cube,tag=shifter,tag=brain,tag=phase2] run tp @e[limit=1,sort=nearest,tag=shifter,tag=bodyinteraction] @s

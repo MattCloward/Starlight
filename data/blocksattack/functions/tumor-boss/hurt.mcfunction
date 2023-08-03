@@ -1,5 +1,5 @@
-execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=stick1,type=interaction] run data remove entity @s attack
-execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=stick2,type=interaction] run data remove entity @s attack
+# execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,type=interaction] run data remove entity @s attack
+execute at @e[tag=shifter,tag=brain] as @e[distance=..5,tag=shifter,type=interaction] run data remove entity @s attack
 
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] store result score @s health run data get entity @s Health
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] run scoreboard players remove @s health 1
@@ -14,8 +14,8 @@ execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playso
 # spawn sculklings
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run function blocksattack:tumor-boss/spewskulklings
 
-# break all blocks within the area
-execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s positioned ~ ~2 ~ run fill ~-6 ~-5 ~-6 ~6 ~9 ~6 air destroy
+# break all blocks within the area if in phase1
+execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain,tag=phase1] at @s positioned ~ ~2 ~ run fill ~-6 ~-5 ~-6 ~6 ~9 ~6 air destroy
 
 execute at @s run data merge entity @e[limit=1,sort=nearest,type=block_display,tag=eye_white] {block_state:{Name:"minecraft:pink_concrete"}}
 execute at @s run data merge entity @e[limit=1,sort=nearest,type=block_display,tag=eye_pupil] {block_state:{Name:"minecraft:red_concrete"}}

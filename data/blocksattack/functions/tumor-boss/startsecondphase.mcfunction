@@ -10,7 +10,9 @@ execute at @s run tag @e[tag=shifter,distance=..5] add phase2
 
 # make the boss drop
 execute run data merge entity @s {NoAI:0b}
-execute run effect give @s instant_health 3
+execute run effect give @s instant_health 10
 execute run effect give @s strength infinite 10 true
 execute run effect give @s jump_boost infinite 10 true
 execute run effect give @s speed infinite 3 true
+
+execute at @s run summon interaction ~ ~ ~ {height:5,width:5,response:true,Tags:["shifter","bodyinteraction"]}
