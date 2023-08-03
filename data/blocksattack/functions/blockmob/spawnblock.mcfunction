@@ -3,6 +3,6 @@ execute run tag @s add block_mob
 execute run effect give @s strength 999999 2 true
 execute run effect give @s speed 999999 5 true
 execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:sculk"},Tags:["block_mob"]}
-execute at @s run ride @e[limit=1,sort=nearest,tag=block_mob,type=block_display] mount @s
-execute at @s as @e[limit=1,sort=nearest,tag=block_mob,type=block_display] run data merge entity @s {transformation:{translation:[-0.5f,-0.78f,-0.5f]}}
+execute at @s run ride @e[limit=1,tag=block_mob,type=block_display,predicate=!blocksattack:is_riding_vehicle] mount @s
+execute at @s as @e[limit=1,sort=nearest,tag=block_mob,type=block_display,predicate=blocksattack:is_riding_vehicle] run data merge entity @s {transformation:{translation:[-0.5f,-0.78f,-0.5f]}}
 execute as @s at @s run data merge entity @s {DeathLootTable:"minecraft:blocks/sculk"}
