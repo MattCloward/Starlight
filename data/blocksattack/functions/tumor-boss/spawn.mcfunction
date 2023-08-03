@@ -36,5 +36,8 @@ summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","eye_pupil"],block_state
 ride @e[limit=1,sort=nearest,tag=shifter,tag=eye_pupil] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
 
 
-bossbar add shifter {"text":"Starlight Tumor","color":"Purple","bold":true}
+bossbar add shifter {"text":"Starlight Tumor","color":"purple","bold":true}
 bossbar set shifter style notched_20
+bossbar set shifter color purple
+bossbar set shifter max 20
+

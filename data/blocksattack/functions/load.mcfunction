@@ -5,8 +5,10 @@
 # say I'm working great!
 
 function blocksattack:tick
+function blocksattack:slowtick
 function blocksattack:animatetick1
 function blocksattack:tumor-boss/tick
+function blocksattack:tumor-boss/slowtick
 
 scoreboard objectives add blockfound dummy
 
