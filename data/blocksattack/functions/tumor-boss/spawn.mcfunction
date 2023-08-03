@@ -3,6 +3,9 @@ summon magma_cube ~-0.5 ~-0.5 ~-0.5 {Size:8,Tags:["shifter","brain","phase1"],Si
 execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] invisibility 999999 1 true
 execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] resistance 999999 5 true
 
+# set health score
+execute at @s as @e[limit=1,sort=nearest,tag=shifter,tag=brain] store result score @s health run data get entity @s Health
+
 # attach the sticks where the shifter hangs
 summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","stick1","phase1"],block_state:{Name:"minecraft:sculk_catalyst",Properties:{bloom:"false"}},transformation:[0.0000f,0.0000f,1.0000f,0.4286f,0.0000f,-15.0000f,0.0000f,15.5812f,1.0000f,-0.0000f,-0.0000f,-1.4935f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=stick1] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]

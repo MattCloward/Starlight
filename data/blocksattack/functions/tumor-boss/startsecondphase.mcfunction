@@ -16,3 +16,6 @@ execute run effect give @s jump_boost infinite 10 true
 execute run effect give @s speed infinite 3 true
 
 execute at @s run summon interaction ~ ~ ~ {height:5,width:5,response:true,Tags:["shifter","bodyinteraction"]}
+
+# set health score
+execute at @s as @e[limit=1,sort=nearest,tag=shifter,tag=brain] store result score @s health run data get entity @s Health
