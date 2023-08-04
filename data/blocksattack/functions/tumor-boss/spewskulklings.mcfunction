@@ -1,5 +1,3 @@
-scoreboard players reset @s entityAge
-
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s positioned ~ ~ ~ run summon magma_cube ~-2 ~5 ~-2 {Size:1}
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s positioned ~ ~ ~ run summon magma_cube ~2 ~5 ~2 {Size:1}
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s positioned ~ ~ ~ run summon magma_cube ~-2 ~5 ~2 {Size:1}

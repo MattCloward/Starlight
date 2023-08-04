@@ -40,3 +40,6 @@ execute if score decay decayTimer matches 0 run scoreboard players set #decay de
 scoreboard objectives add hasDecayed dummy
 
 scoreboard objectives add health dummy
+
+# used to count the number of sculklings near the boss
+scoreboard objectives add numSculklings dummy
