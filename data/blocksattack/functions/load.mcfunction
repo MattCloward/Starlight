@@ -43,3 +43,8 @@ scoreboard objectives add health dummy
 
 # used to count the number of sculklings near the boss
 scoreboard objectives add numSculklings dummy
+
+# objectives for the laser attack
+scoreboard objectives add laserstart dummy
+scoreboard objectives add lasercast dummy
+scoreboard objectives add priming dummy

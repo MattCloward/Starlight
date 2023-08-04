@@ -33,9 +33,9 @@ summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","front_right_corner","ph
 ride @e[limit=1,sort=nearest,tag=shifter,tag=front_right_corner] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
 
 # attach eye
-summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","eye_white","phase1"],block_state:{Name:"minecraft:white_concrete",Properties:{}},transformation:[-0.0000f,0.0000f,-1.5000f,0.6786f,-1.2500f,-0.0000f,0.0000f,0.0187f,-0.0000f,1.0000f,0.0000f,1.5690f,0.0000f,0.0000f,0.0000f,1.0000f]}
+summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","eye_white","eye","phase1"],block_state:{Name:"minecraft:white_concrete",Properties:{}},transformation:[-0.0000f,0.0000f,-1.5000f,0.6786f,-1.2500f,-0.0000f,0.0000f,0.0187f,-0.0000f,1.0000f,0.0000f,1.5690f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=eye_white] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
-summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","eye_pupil","phase1"],block_state:{Name:"minecraft:black_concrete",Properties:{}},transformation:[0.0000f,0.0000f,-1.0000f,0.4286f,0.0000f,0.6875f,0.0000f,-1.1688f,1.0000f,0.0000f,0.0000f,1.6940f,0.0000f,0.0000f,0.0000f,1.0000f]}
+summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","eye_pupil","eye","phase1"],block_state:{Name:"minecraft:black_concrete",Properties:{}},transformation:[0.0000f,0.0000f,-1.0000f,0.4286f,0.0000f,0.6875f,0.0000f,-1.1688f,1.0000f,0.0000f,0.0000f,1.6940f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=eye_pupil] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
 
 
