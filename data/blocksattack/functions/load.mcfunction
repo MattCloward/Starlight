@@ -6,6 +6,7 @@
 
 function blocksattack:tick
 function blocksattack:slowtick
+function blocksattack:secondtick
 function blocksattack:animatetick1
 function blocksattack:tumor-boss/tick
 function blocksattack:tumor-boss/slowtick
@@ -35,6 +36,10 @@ scoreboard objectives add zStep dummy
 scoreboard objectives add decayTimer dummy
 scoreboard players add #decay decayTimer 0
 execute if score decay decayTimer matches 0 run scoreboard players set #decay decayTimer 200
+
+scoreboard objectives add sentienceTimer dummy
+scoreboard players add #sentience sentienceTimer 0
+execute if score #sentience sentienceTimer matches 0 run scoreboard players set #sentience sentienceTimer 10
 
 # whether a block has decayed or not near the player
 scoreboard objectives add hasDecayed dummy
