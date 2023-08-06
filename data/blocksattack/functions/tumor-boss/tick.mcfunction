@@ -40,3 +40,7 @@ execute as @e[type=block_display,scores={entityAge=200..}] at @s positioned ~ ~-
 
 # add age to the boss
 execute as @e[tag=brain,tag=shifter] run scoreboard players add @s entityAge 1
+
+# handle eye animations
+execute as @e[type=block_display,tag=eye] run scoreboard players add @s bossanimationtick 1
+execute as @e[type=block_display,tag=eye,scores={bossanimationtick=100..,priming=0}] at @s run function blocksattack:tumor-boss/animations/eye/blink
