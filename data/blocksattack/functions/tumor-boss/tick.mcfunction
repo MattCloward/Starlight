@@ -2,7 +2,7 @@ schedule function blocksattack:tumor-boss/tick 1t
 
 # rotate all block displays in the direction the brain is facing
 execute as @e[type=block_display,tag=shifter,tag=phase2] at @s run data modify entity @s Rotation set from entity @e[type=magma_cube,tag=shifter,tag=brain,limit=1,sort=nearest] Rotation
-execute as @e[type=block_display,tag=shifter,tag=phase1,tag=!stick1,tag=!stick2,tag=eye] at @s run tp @s ~ ~ ~ facing entity @a[limit=1,sort=nearest] eyes
+execute as @e[type=block_display,tag=shifter,tag=phase1,tag=!stick1,tag=!stick2] at @s run tp @s ~ ~ ~ facing entity @a[limit=1,sort=nearest] eyes
 
 # check if interactions have been hit
 execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=stick1,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
@@ -37,3 +37,6 @@ execute as @e[type=magma_cube,tag=shifter,tag=brain,tag=phase2] run tp @e[limit=
 execute as @e[type=block_display,scores={priming=1}] run scoreboard players add @s entityAge 1
 execute as @e[type=block_display,scores={priming=1,entityAge=..200}] at @s positioned ^ ^-0.75 ^2.5 run particle minecraft:dust 0.67 0 0 0.5 ^ ^ ^ 0.3 0.3 0.3 2 30 force
 execute as @e[type=block_display,scores={entityAge=200..}] at @s positioned ~ ~-1 ~ run function blocksattack:tumor-boss/laserstart
+
+# add age to the boss
+execute as @e[tag=brain,tag=shifter] run scoreboard players add @s entityAge 1

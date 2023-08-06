@@ -1,1 +1,0 @@
-schedule function blocksattack:slowtick 10t

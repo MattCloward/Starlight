@@ -1,7 +1,7 @@
-# debug command that turns all spiders into spiderlights
-# spiderlights are currently only created in ray/replace
-# execute as @e[type=spider,tag=!spider_light] run function blocksattack:spiderlight/spawnspiderlight
+schedule function blocksattack:spiderlight/spidermobtick 1t
 
+# debug command that turns all spiders into spiderlights (spiderlights are currently only created in ray/replace)
+# execute as @e[type=spider,tag=!spider_light] run function blocksattack:spiderlight/spawnspiderlight
 
 # rotates block displays to match spiders
 execute as @e[type=block_display,tag=spider_light] at @s run data modify entity @s Rotation set from entity @e[type=spider,tag=spider_light,limit=1,sort=nearest] Rotation

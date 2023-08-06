@@ -1,3 +1,5 @@
+schedule function blocksattack:blockmob/blockmobtick 1t
+
 # makes all size 1 magma cubes become sculk blocks
 execute as @e[type=magma_cube,nbt={Size:1},tag=!block_mob] run function blocksattack:blockmob/spawnblock
 

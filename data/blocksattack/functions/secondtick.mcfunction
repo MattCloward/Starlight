@@ -16,3 +16,11 @@ execute at @a[gamemode=!creative,gamemode=!spectator] unless block ~ ~-1 ~ sculk
 execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] if block ~ ~-1 ~ sculk run function blocksattack:blockmob/spawnsculkling
 # if the player is jumping, still spawn the sculklings
 execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] unless block ~ ~-1 ~ sculk if block ~ ~-2 ~ sculk positioned ~ ~-1 ~ run function blocksattack:blockmob/spawnsculkling
+
+# add age to xp orbs- when they get old enough, spawn bloom
+execute as @e[type=experience_orb] run scoreboard players add @s entityAge 1
+# TODO use #decay decayTimer or a different value to make this value customizable
+execute as @e[type=experience_orb,scores={entityAge=10..}] at @s run function blocksattack:bloom
+# add age to bloom removers- when they get old enough, remove the catalyst and spawn a fang
+execute as @e[type=block_display,tag=bloom_remover,tag=not_activated] run scoreboard players add @s entityAge 1
+execute as @e[type=block_display,tag=bloom_remover,tag=not_activated,scores={entityAge=5..}] at @s run function blocksattack:bloom-remove
