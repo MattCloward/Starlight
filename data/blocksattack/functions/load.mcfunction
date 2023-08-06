@@ -32,20 +32,20 @@ scoreboard objectives add xStep dummy
 scoreboard objectives add yStep dummy
 scoreboard objectives add zStep dummy
 
-# create a decay timer objective, set the fake player #blocksattackhandler's objective to exist,
+# create a decay timer objective, set the fake player #handler's objective to exist,
 # then check if they have a score and set it to a default value if they don't
 # this is used to check how often blocks should decay around players
 scoreboard objectives add decayTimer dummy
-scoreboard players add #blocksattackhandler decayTimer 0
-execute if score #blocksattackhandler decayTimer matches 0 run scoreboard players set #blocksattackhandler decayTimer 200
+scoreboard players add #handler decayTimer 0
+execute if score #handler decayTimer matches 0 run scoreboard players set #handler decayTimer 200
 
 scoreboard objectives add sentienceTimer dummy
-scoreboard players add #blocksattackhandler sentienceTimer 0
-execute if score #blocksattackhandler sentienceTimer matches 0 run scoreboard players set #blocksattackhandler sentienceTimer 10
+scoreboard players add #handler sentienceTimer 0
+execute if score #handler sentienceTimer matches 0 run scoreboard players set #handler sentienceTimer 10
 
 scoreboard objectives add bossTimer dummy
-scoreboard players add #blocksattackhandler bossTimer 0
-execute if score #blocksattackhandler bossTimer matches 0 run scoreboard players set #blocksattackhandler bossTimer 500
+scoreboard players add #handler bossTimer 0
+execute if score #handler bossTimer matches 0 run scoreboard players set #handler bossTimer 500
 
 
 # whether a block has decayed or not near the player

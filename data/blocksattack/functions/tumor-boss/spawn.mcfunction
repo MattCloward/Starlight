@@ -1,5 +1,5 @@
 # the brain of the shifter
-summon magma_cube ~-0.5 ~-0.5 ~-0.5 {Size:8,Tags:["shifter","brain","phase1"],Silent:1b,NoAI:1b,PersistenceRequired:1b,DeathLootTable:"",Attributes:[{Name:"generic.follow_range",Base:150.0},{Name:"generic.max_health",Base:20}]}
+summon magma_cube ~-0.5 ~-0.5 ~-0.5 {Size:8,Tags:["shifter","brain","phase1"],Silent:1b,NoAI:1b,PersistenceRequired:1b,DeathLootTable:"",Attributes:[{Name:"generic.follow_range",Base:150.0},{Name:"generic.max_health",Base:20}],CustomName:'[{"text":"Starlight Tumor","color":"red"}]'}
 execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] invisibility 999999 1 true
 execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] resistance 999999 5 true
 
