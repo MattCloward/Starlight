@@ -15,4 +15,4 @@ execute if block ~1 ~-1 ~ sculk run summon magma_cube ~1 ~-1 ~ {Size:1,Persisten
 execute if block ~1 ~-1 ~ sculk run setblock ~1 ~-1 ~ air replace
 
 # reset the player's score
-execute run scoreboard players operation @a[sort=nearest,limit=1] onSculkTimer = #sentience sentienceTimer
+execute run scoreboard players operation @a[sort=nearest,limit=1] onSculkTimer = #blocksattackhandler sentienceTimer

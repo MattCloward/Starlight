@@ -38,6 +38,7 @@ ride @e[limit=1,sort=nearest,tag=shifter,tag=eye_white] mount @e[limit=1,sort=ne
 summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","eye_pupil","eye","phase1"],block_state:{Name:"minecraft:black_concrete",Properties:{}},transformation:[0.0000f,0.0000f,-1.0000f,0.4286f,0.0000f,0.6875f,0.0000f,-1.1688f,1.0000f,0.0000f,0.0000f,1.6940f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=eye_pupil] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
 
+execute at @s as @e[limit=1,sort=nearest,tag=shifter,tag=brain] run scoreboard players set @s priming 0
 
 bossbar add shifter {"text":"Starlight Tumor","color":"purple","bold":true}
 bossbar set shifter style notched_20
