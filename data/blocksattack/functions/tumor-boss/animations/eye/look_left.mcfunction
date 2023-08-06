@@ -1,0 +1,2 @@
+execute as @e[tag=shifter,tag=eye_white,type=block_display] run data merge entity @s {interpolation_duration:3,start_interpolation:-1,transformation:[-0.0000f,0.0000f,-1.5000f,1.1786f,-1.2500f,-0.0000f,0.0000f,0.0187f,-0.0000f,1.0000f,0.0000f,1.5690f,0.0000f,0.0000f,0.0000f,1.0000f]}
+execute as @e[tag=shifter,tag=eye_pupil,type=block_display] run data merge entity @s {interpolation_duration:3,start_interpolation:-1,transformation:[0.0000f,0.0000f,-1.0000f,1.1286f,0.0000f,0.6875f,0.0000f,-1.1688f,1.0000f,0.0000f,0.0000f,1.6940f,0.0000f,0.0000f,0.0000f,1.0000f]}
