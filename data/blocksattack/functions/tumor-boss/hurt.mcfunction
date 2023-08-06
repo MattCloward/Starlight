@@ -9,11 +9,13 @@ execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] run scoreboard p
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain,tag=phase2] run damage @s 1 player_attack by @a[sort=nearest,limit=1]
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain,tag=phase2] store result entity @s Health float 1 run scoreboard players get @s health
 
+execute as @e[sort=nearest,limit=1,tag=shifter,tag=brain] run function blocksattack:tumor-boss/animations/get_big
+
 # play sounds
-execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.sculk_catalyst.break hostile @a ~ ~ ~
-execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.mud.break hostile @a ~ ~ ~
-execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.sculk.break hostile @a ~ ~ ~
-execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.sculk_shrieker.shriek hostile @a ~ ~ ~ 2
+execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.sculk_catalyst.break hostile @a ~ ~ ~ 10
+execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.mud.break hostile @a ~ ~ ~ 10
+execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.sculk.break hostile @a ~ ~ ~ 10
+execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run playsound block.sculk_shrieker.shriek hostile @a ~ ~ ~ 10
 
 # spawn sculklings
 execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain] at @s run function blocksattack:tumor-boss/spewskulklings

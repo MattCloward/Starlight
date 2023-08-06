@@ -1,5 +1,5 @@
 # make breaking sound
-execute at @s run playsound entity.zombie.break_wooden_door hostile @a ~ ~ ~
+execute at @s run playsound entity.zombie.break_wooden_door hostile @a ~ ~ ~ 10
 
 # kill the sticks
 execute at @s run kill @e[tag=stick1,tag=shifter,distance=..5]
