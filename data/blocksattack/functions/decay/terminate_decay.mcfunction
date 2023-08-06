@@ -6,3 +6,4 @@ particle minecraft:sculk_soul ~ ~.5 ~ .1 .1 .1 0.01 2
 playsound block.sculk.break block @a ~ ~ ~
 playsound block.sculk.hit block @a ~ ~ ~
 playsound minecraft:block.sculk.place block @a ~ ~ ~
+summon area_effect_cloud ~ ~-2 ~ {Particle:effect,Potion:"weakness",Radius:4,Duration:140,Color:0}
