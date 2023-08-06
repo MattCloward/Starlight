@@ -22,7 +22,7 @@ execute as @e[tag=shifter,tag=brain] store result bossbar shifter value run scor
 # TODO this needs to only happen if skulklings have been killed
 # attack if the age timer reaches a certain value
 # TODO update this value accordingly
-execute as @e[tag=shifter,tag=brain,tag=phase1,scores={entityAge=500..}] at @s run function blocksattack:tumor-boss/phase1chooseattack
+execute as @e[tag=shifter,tag=brain,tag=phase1] at @s if score @s entityAge >= #blocksattackhandler bossTimer run function blocksattack:tumor-boss/phase1chooseattack
 
 # if the brain has one health, start the next phase
 # TODO make the boss bar be based only on the score and not actual health to ensure no early death occurs
