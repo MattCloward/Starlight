@@ -26,9 +26,4 @@ execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~12 ~ 
 execute as @e[type=interaction,tag=shifter,tag=stick2] at @s positioned ~ ~14 ~ if entity @a[distance=..2,limit=1,sort=nearest] run damage @a[limit=1,sort=nearest] 10 mob_attack by @s
 
 # remove intermediates of boss
-execute as @e[type=magma_cube,nbt={Size:7}] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
-execute as @e[type=magma_cube,nbt={Size:6}] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
-execute as @e[type=magma_cube,nbt={Size:5}] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
-execute as @e[type=magma_cube,nbt={Size:4}] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
-execute as @e[type=magma_cube,nbt={Size:3}] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
 execute as @e[type=magma_cube,nbt={Size:2}] run data merge entity @s {Health:0.0f, Silent:1b, DeathTime:19s, DeathLootTable:""}
