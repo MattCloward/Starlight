@@ -74,6 +74,9 @@ scoreboard objectives add health dummy
 
 # used to count the number of sculklings near the boss
 scoreboard objectives add numSculklings dummy
+# add max number of sculklings allowed to the handler
+scoreboard players add #handler numSculklings 0
+execute if score #handler numSculklings matches 0 run scoreboard players set #handler numSculklings 15
 
 # objectives for the laser attack
 scoreboard objectives add laserstart dummy
