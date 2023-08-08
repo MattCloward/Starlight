@@ -42,3 +42,8 @@ execute as @e[tag=brain,tag=shifter] run scoreboard players add @s entityAge 1
 # handle eye animations
 execute as @e[type=block_display,tag=eye] run scoreboard players add @s bossanimationtick 1
 execute as @e[type=block_display,tag=eye_pupil,scores={bossanimationtick=100..,priming=0}] at @s run function blocksattack:tumor-boss/animations/eye/blink
+
+# if off ground, give airborn tag
+execute as @e[tag=brain,tag=shifter] at @s anchored feet if block ~ ~-1 ~ air run tag @s add airborn
+# if returned to ground, cause shock wave
+execute as @e[tag=brain,tag=shifter,tag=airborn] at @s anchored feet unless block ~ ~-1 ~ air run function blocksattack:tumor-boss/shockwave
