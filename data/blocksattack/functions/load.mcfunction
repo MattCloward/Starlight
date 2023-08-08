@@ -8,7 +8,9 @@ function blocksattack:tick
 function blocksattack:slowtick
 function blocksattack:secondtick
 function blocksattack:blockmob/blockmobtick
+function blocksattack:blockmob/secondtick
 function blocksattack:spiderlight/spidermobtick
+function blocksattack:spiderlight/secondtick
 function blocksattack:animatetick1
 function blocksattack:tumor-boss/tick
 function blocksattack:tumor-boss/slowtick
