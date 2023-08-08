@@ -47,6 +47,9 @@ scoreboard objectives add bossTimer dummy
 scoreboard players add #handler bossTimer 0
 execute if score #handler bossTimer matches 0 run scoreboard players set #handler bossTimer 500
 
+scoreboard objectives add xpTimer dummy
+scoreboard players add #handler xpTimer 0
+execute if score #handler xpTimer matches 0 run scoreboard players set #handler xpTimer 10
 
 # whether a block has decayed or not near the player
 scoreboard objectives add hasDecayed dummy
@@ -62,3 +65,5 @@ scoreboard objectives add lasercast dummy
 scoreboard objectives add priming dummy
 
 scoreboard objectives add bossanimationtick dummy
+
+scoreboard objectives add invulnerable dummy
