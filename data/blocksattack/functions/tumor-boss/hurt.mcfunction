@@ -27,4 +27,6 @@ execute at @e[sort=nearest,limit=1,tag=shifter,tag=brain,tag=phase1,scores={invu
 execute at @e[sort=nearest,limit=1,tag=shifter,tag=brain,tag=phase1,scores={invulnerable=..0}] run data merge entity @e[limit=1,sort=nearest,type=block_display,tag=eye_pupil] {block_state:{Name:"minecraft:red_concrete"}}
 schedule function blocksattack:tumor-boss/animations/eye/reset_eye 3t
 
+execute at @s as @e[sort=nearest,limit=1,tag=shifter,tag=brain,tag=phase2,scores={invulnerable=..0}] run data merge entity @s {Motion:[0d,2d,0d]}
+
 execute at @e[tag=shifter,tag=brain,scores={invulnerable=..0}] as @e[tag=shifter,tag=brain,limit=1,sort=nearest] run scoreboard players set @s invulnerable 2
