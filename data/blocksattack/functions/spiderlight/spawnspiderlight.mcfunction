@@ -4,7 +4,7 @@ execute run tag @s add spider_light
 execute run data merge entity @s {CustomName:'[{"text":"Spiderlight","color":"gold","italic":true}]'}
 
 # attacking brain
-execute at @s run summon husk ~-0.5 ~ ~-0.5 {Tags:["spider_light","brain"],Silent:1b,IsBaby:1b,PersistenceRequired:1b,CustomName:'[{"text":"Spiderlight","color":"gold","italic":true}]'}
+execute at @s run summon husk ~-0.5 ~ ~-0.5 {Tags:["spider_light","brain"],Silent:1b,IsBaby:1b,CustomName:'[{"text":"Spiderlight","color":"gold","italic":true}]'}
 execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] mount @s
 execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] invisibility 999999 1 true
 execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] strength 999999 2 true
@@ -28,8 +28,6 @@ execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] i
 
 execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] mount @s
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] run data merge entity @s {transformation:[1.000f, 0.000f, 0.000f,-0.500f,0.000f, 1.000f, 0.000f,-0.500f,0.000f, 0.000f, 1.000f,-0.500f,0.000f, 0.000f, 0.000f,1.000f]}
-
-# https://mlakuss.github.io/minecraft-display-entities-generator/
 
 # leg 1 left middle (rotation: 0, 0, -25)
 execute at @s run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:end_rod",Properties:{facing:"east"}},Tags:["spider_light","leg1"]}
