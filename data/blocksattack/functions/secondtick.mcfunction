@@ -20,7 +20,11 @@ execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] 
 # add age to xp orbs- when they get old enough, spawn bloom
 execute as @e[type=experience_orb] run scoreboard players add @s entityAge 1
 # TODO use #handler decayTimer or a different value to make this value customizable
-execute as @e[type=experience_orb,scores={entityAge=10..}] at @s run function blocksattack:bloom
+execute as @e[type=experience_orb] at @s if score @s entityAge >= #handler xpAge if entity @a[name="Icedice9",distance=..35] run function blocksattack:bloom
+execute as @e[type=experience_orb] at @s if score @s entityAge >= #handler xpAge if entity @a[name="SendaiCannon",distance=..35] run function blocksattack:bloom
 # add age to bloom removers- when they get old enough, remove the catalyst and spawn a fang
 execute as @e[type=block_display,tag=bloom_remover,tag=not_activated] run scoreboard players add @s entityAge 1
 execute as @e[type=block_display,tag=bloom_remover,tag=not_activated,scores={entityAge=5..}] at @s run function blocksattack:bloom-remove
+
+# invulnerability timer for boss
+execute as @e[type=magma_cube,tag=brain,tag=shifter,scores={invulnerable=1..}] run scoreboard players remove @s invulnerable 1

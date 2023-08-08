@@ -27,6 +27,7 @@ scoreboard objectives add modop dummy
 # used to keep track of the age of xp orbs and bloom removers
 scoreboard objectives add entityAge dummy
 
+# how long a player has been standing on sculk
 scoreboard objectives add onSculkTimer dummy
 
 # controls the search radius around the bloom-removers
@@ -41,14 +42,22 @@ scoreboard objectives add decayTimer dummy
 scoreboard players add #handler decayTimer 0
 execute if score #handler decayTimer matches 0 run scoreboard players set #handler decayTimer 200
 
+# controls the duration required to be on sculk before blocks become sentient 
 scoreboard objectives add sentienceTimer dummy
 scoreboard players add #handler sentienceTimer 0
 execute if score #handler sentienceTimer matches 0 run scoreboard players set #handler sentienceTimer 10
 
+# controls the frequency of boss attacks in ticks
 scoreboard objectives add bossTimer dummy
 scoreboard players add #handler bossTimer 0
 execute if score #handler bossTimer matches 0 run scoreboard players set #handler bossTimer 500
 
+# controls the age in seconds xp orbs must be before summoning bloom
+scoreboard objectives add xpAge dummy
+scoreboard players add #handler xpAge 0
+execute if score #handler xpAge matches 0 run scoreboard players set #handler xpAge 5
+
+# controls how often spiderlights can drop xp
 scoreboard objectives add xpTimer dummy
 scoreboard players add #handler xpTimer 0
 execute if score #handler xpTimer matches 0 run scoreboard players set #handler xpTimer 10
@@ -56,6 +65,7 @@ execute if score #handler xpTimer matches 0 run scoreboard players set #handler 
 # whether a block has decayed or not near the player
 scoreboard objectives add hasDecayed dummy
 
+# the health of the boss, as a score to protect its actual health
 scoreboard objectives add health dummy
 
 # used to count the number of sculklings near the boss
@@ -68,4 +78,5 @@ scoreboard objectives add priming dummy
 
 scoreboard objectives add bossanimationtick dummy
 
+# the duration in seconds that the boss is invulnerable
 scoreboard objectives add invulnerable dummy
