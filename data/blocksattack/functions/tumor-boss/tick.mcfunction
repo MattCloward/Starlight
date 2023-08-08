@@ -25,7 +25,6 @@ execute as @e[tag=shifter,tag=brain] store result bossbar shifter value run scor
 execute as @e[tag=shifter,tag=brain,tag=phase1] at @s if score @s entityAge >= #handler bossTimer run function blocksattack:tumor-boss/phase1chooseattack
 
 # if the brain has one health, start the next phase
-# TODO make the boss bar be based only on the score and not actual health to ensure no early death occurs
 execute as @e[tag=shifter,tag=brain,tag=phase1,scores={health=..0}] run function blocksattack:tumor-boss/startsecondphase 
 
 # teleport the interaction entity to the phase 2 brain
