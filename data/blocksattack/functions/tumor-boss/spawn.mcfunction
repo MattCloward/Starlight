@@ -47,3 +47,6 @@ bossbar set shifter style notched_20
 bossbar set shifter color purple
 bossbar set shifter max 20
 
+# summoning sounds
+execute as @e[limit=1,sort=nearest,tag=shifter,tag=brain] at @s run playsound entity.wither.spawn block @a ~ ~ ~ 10 1
+execute as @e[limit=1,sort=nearest,tag=shifter,tag=brain] at @s run playsound entity.wither.ambient block @a ~ ~ ~ 10 0.75
