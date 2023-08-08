@@ -13,8 +13,3 @@ execute as @e[type=!spider,tag=spider_light,tag=brain,predicate=!blocksattack:is
 execute as @e[type=spider,tag=spider_light,predicate=!blocksattack:has_brain] run function blocksattack:spiderlight/kill-spiderlight
 # kills all block displays not riding something
 execute as @e[type=block_display,tag=spider_light,predicate=!blocksattack:is_riding_vehicle] run kill @s
-
-# freeze spider if not close to player
-execute as @e[type=spider,tag=spider_light,nbt={OnGround:1b}] at @s if entity @p[limit=1,sort=nearest,distance=16..,gamemode=!spectator] run function blocksattack:freezeblockmob
-# unfreeze spider entity if close to player
-execute as @e[type=spider,tag=spider_light,nbt={NoAI:1b}] at @s if entity @p[limit=1,sort=nearest,distance=..10,gamemode=!spectator] run data merge entity @s {NoAI:0b,Silent:0b}
