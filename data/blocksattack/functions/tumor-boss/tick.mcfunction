@@ -5,10 +5,12 @@ execute as @e[type=block_display,tag=shifter,tag=phase2] at @s run data modify e
 execute as @e[type=block_display,tag=shifter,tag=phase1,tag=!stick1,tag=!stick2] at @s run tp @s ~ ~ ~ facing entity @a[limit=1,sort=nearest] eyes
 
 # check if interactions have been hit
-execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=stick1,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
-execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=stick2,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
-execute at @e[tag=shifter,tag=brain] as @e[limit=1,sort=nearest,tag=shifter,tag=bodyinteraction,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
+execute at @e[tag=shifter,tag=brain] as @e[distance=..20,limit=1,sort=nearest,tag=shifter,tag=stick1,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
+execute at @e[tag=shifter,tag=brain] as @e[distance=..20,limit=1,sort=nearest,tag=shifter,tag=stick2,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
+execute at @e[tag=shifter,tag=brain] as @e[distance=..20,limit=1,sort=nearest,tag=shifter,tag=bodyinteraction,type=interaction] on attacker run function blocksattack:tumor-boss/hurt
 
+# order here matters- the attack is removed regardless of the outcome above
+execute at @e[tag=shifter,tag=brain] as @e[distance=..5,tag=shifter,type=interaction] run data remove entity @s attack
 
 # kill all block displays and interactions not attached to the boss brain
 execute as @e[type=block_display,tag=shifter,predicate=!blocksattack:is_riding_vehicle] at @s run function blocksattack:tumor-boss/kill
