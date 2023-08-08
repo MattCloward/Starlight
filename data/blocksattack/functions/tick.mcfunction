@@ -22,7 +22,6 @@ execute as @e[type=falling_block,tag=decaying_block,scores={entityAge=..5}] at @
 execute as @e[type=falling_block,tag=decaying_block,scores={entityAge=5..}] at @s run function blocksattack:decay/terminate_decay
 
 # check if the player's score is greater than the set decay timer
-# TODO fix this- permissions might not work
 execute as @a[gamemode=!creative,gamemode=!spectator] if score @s entityAge >= #handler decayTimer run function blocksattack:decay/decay_ray/start
 
 # invulnerable glow effect
