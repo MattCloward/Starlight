@@ -19,9 +19,8 @@ execute at @a[scores={onSculkTimer=..0},gamemode=!creative,gamemode=!spectator] 
 
 # add age to xp orbs- when they get old enough, spawn bloom
 execute as @e[type=experience_orb] run scoreboard players add @s entityAge 1
-# TODO bloom commands
-execute as @e[type=experience_orb] at @s if score @s entityAge >= #handler xpAge if entity @a[name="Icedice9",distance=..35] run function blocksattack:bloom
-execute as @e[type=experience_orb] at @s if score @s entityAge >= #handler xpAge if entity @a[name="SendaiCannon",distance=..35] run function blocksattack:bloom
+# bloom commands
+execute as @e[type=experience_orb] at @s if score @s entityAge >= #handler xpAge run function blocksattack:bloom
 # add age to bloom removers- when they get old enough, remove the catalyst and spawn a fang
 execute as @e[type=block_display,tag=bloom_remover,tag=not_activated] run scoreboard players add @s entityAge 1
 execute as @e[type=block_display,tag=bloom_remover,tag=not_activated,scores={entityAge=5..}] at @s run function blocksattack:bloom-remove
