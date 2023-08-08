@@ -10,21 +10,19 @@ execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain
 execute at @s run effect give @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] strength 999999 2 true
 
 # get a random value for the spawned spider (world time)
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] store result score @s spiderlightrand run time query gametime
-# set the mod divider to 3
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] run scoreboard players set @s modop 3
-# set the spiderlightrand of the brain to world time % 3
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] run scoreboard players operation @s spiderlightrand %= @s modop
-# set the loot table depending on the spiderlightrand of the brain
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=0}] run data merge entity @s {DeathLootTable:"minecraft:blocks/ochre_froglight"}
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=1}] run data merge entity @s {DeathLootTable:"minecraft:blocks/pearlescent_froglight"}
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=2}] run data merge entity @s {DeathLootTable:"minecraft:blocks/verdant_froglight"}
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] store result score @s worldrand run time query gametime
+# set the worldrand of the brain to world time % 3 (see load function)
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] run scoreboard players operation @s worldrand %= #handler modop
+# set the loot table depending on the worldrand of the brain
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=0}] run data merge entity @s {DeathLootTable:"minecraft:blocks/ochre_froglight"}
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=1}] run data merge entity @s {DeathLootTable:"minecraft:blocks/pearlescent_froglight"}
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=2}] run data merge entity @s {DeathLootTable:"minecraft:blocks/verdant_froglight"}
 
 # body
-# set the froglight color based on the spiderlightrand of the brain
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=0}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:ochre_froglight"},Tags:["spider_light","body"]}
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=1}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:pearlescent_froglight"},Tags:["spider_light","body"]}
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=2}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:verdant_froglight"},Tags:["spider_light","body"]}
+# set the froglight color based on the worldrand of the brain
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=0}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:ochre_froglight"},Tags:["spider_light","body"]}
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=1}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:pearlescent_froglight"},Tags:["spider_light","body"]}
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=2}] run summon block_display ~-0.5 ~ ~-0.5 {block_state:{Name:"minecraft:verdant_froglight"},Tags:["spider_light","body"]}
 
 execute at @s run ride @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] mount @s
 execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=body,type=block_display] run data merge entity @s {transformation:[1.000f, 0.000f, 0.000f,-0.500f,0.000f, 1.000f, 0.000f,-0.500f,0.000f, 0.000f, 1.000f,-0.500f,0.000f, 0.000f, 0.000f,1.000f]}
@@ -61,9 +59,9 @@ execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg6,type=block_di
 
 # /execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=leg1,type=block_display] run data merge entity @s {start_interpolation:-1,interpolation_duration:20,transformation:{right_rotation:[0f,0f,-0.25f,1f],translation:[-0.15f,-0.4f,-0.5f]}}
 
-# set the loot table depending on the spiderlightrand of the brain
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=0}] run data merge entity @e[limit=1,sort=nearest,type=spider,tag=spider_light] {DeathLootTable:"minecraft:blocks/ochre_froglight"}
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=1}] run data merge entity @e[limit=1,sort=nearest,type=spider,tag=spider_light] {DeathLootTable:"minecraft:blocks/pearlescent_froglight"}
-execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={spiderlightrand=2}] run data merge entity @e[limit=1,sort=nearest,type=spider,tag=spider_light] {DeathLootTable:"minecraft:blocks/verdant_froglight"}
+# set the loot table depending on the worldrand of the brain
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=0}] run data merge entity @e[limit=1,sort=nearest,type=spider,tag=spider_light] {DeathLootTable:"minecraft:blocks/ochre_froglight"}
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=1}] run data merge entity @e[limit=1,sort=nearest,type=spider,tag=spider_light] {DeathLootTable:"minecraft:blocks/pearlescent_froglight"}
+execute at @s as @e[limit=1,sort=nearest,tag=spider_light,tag=brain,type=husk] if entity @s[scores={worldrand=2}] run data merge entity @e[limit=1,sort=nearest,type=spider,tag=spider_light] {DeathLootTable:"minecraft:blocks/verdant_froglight"}
 
 # summon spider ~ ~ ~ {NoAI:1b,Passengers:[{id:"minecraft:block_display",Passengers:[{id:"minecraft:block_display",block_state:{Name:"minecraft:end_rod",Properties:{facing:"down"}}}],transformation:{translation:[-0.5f,-0.25f,-0.5f]},block_state:{Name:"minecraft:pearlescent_froglight"}}]}

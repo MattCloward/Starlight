@@ -20,7 +20,7 @@ scoreboard objectives add blockfound dummy
 scoreboard objectives add blocksearchstart dummy
 scoreboard objectives add blocksearchcast dummy
 
-scoreboard objectives add spiderlightrand dummy
+scoreboard objectives add worldrand dummy
 # the mod operator for the random block chosen for the spiderlight (set to 3 later)
 scoreboard objectives add modop dummy
 
@@ -34,6 +34,10 @@ scoreboard objectives add onSculkTimer dummy
 scoreboard objectives add xStep dummy
 scoreboard objectives add yStep dummy
 scoreboard objectives add zStep dummy
+
+scoreboard objectives add modop dummy
+scoreboard players add #handler modop 0
+execute if score #handler modop matches 0 run scoreboard players set #handler modop 3
 
 # create a decay timer objective, set the fake player #handler's objective to exist,
 # then check if they have a score and set it to a default value if they don't
