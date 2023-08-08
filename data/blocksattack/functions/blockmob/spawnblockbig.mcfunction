@@ -1,3 +1,4 @@
+execute at @s run playsound entity.wither.death hostile @a ~ ~ ~ 10 1
 execute run effect give @s invisibility 999999 1 true
 execute run tag @s add block_mob
 execute run effect give @s strength 999999 2 true
