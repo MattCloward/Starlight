@@ -1,7 +1,9 @@
 # the brain of the shifter
 summon magma_cube ~-0.5 ~-0.5 ~-0.5 {Size:8,Tags:["shifter","brain","phase1"],Silent:1b,NoAI:1b,PersistenceRequired:1b,DeathLootTable:"",Attributes:[{Name:"generic.follow_range",Base:150.0},{Name:"generic.max_health",Base:20}],CustomName:'[{"text":"Starlight Tumor","color":"red"}]'}
-execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] invisibility 999999 1 true
-execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] resistance 999999 5 true
+execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] invisibility infinite 1 true
+execute at @s run effect give @e[limit=1,sort=nearest,tag=shifter,tag=brain] resistance infinite 10 true
+
+execute at @s run scoreboard players set @e[limit=1,sort=nearest,tag=shifter,tag=brain] invulnerable 0
 
 # set health score
 execute at @s as @e[limit=1,sort=nearest,tag=shifter,tag=brain] store result score @s health run data get entity @s Health
@@ -9,10 +11,10 @@ execute at @s as @e[limit=1,sort=nearest,tag=shifter,tag=brain] store result sco
 # attach the sticks where the shifter hangs
 summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","stick1","phase1"],block_state:{Name:"minecraft:sculk_catalyst",Properties:{bloom:"false"}},transformation:[0.0000f,0.0000f,1.0000f,0.4286f,0.0000f,-15.0000f,0.0000f,15.5812f,1.0000f,-0.0000f,-0.0000f,-1.4935f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=stick1] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
-summon interaction ~-1.5 ~3 ~0.5 {height:8,response:true,Tags:["shifter","stick1"]}
+summon interaction ~-1.5 ~3 ~0.5 {height:8,response:true,Tags:["shifter","stick1"],CustomName:'[{"text":"Starlight Tumor","color":"red"}]'}
 summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags:["shifter","stick2","phase1"],block_state:{Name:"minecraft:sculk_catalyst",Properties:{bloom:"false"}},transformation:[0.0000f,0.0000f,1.0000f,-1.5714f,0.0000f,-15.0000f,0.0000f,15.5812f,1.0000f,-0.0000f,-0.0000f,0.5065f,0.0000f,0.0000f,0.0000f,1.0000f]}
 ride @e[limit=1,sort=nearest,tag=shifter,tag=stick2] mount @e[limit=1,sort=nearest,tag=shifter,tag=brain]
-summon interaction ~0.5 ~3 ~-1.5 {height:8,response:true,Tags:["shifter","stick2","phase1"]}
+summon interaction ~0.5 ~3 ~-1.5 {height:8,response:true,Tags:["shifter","stick2","phase1"],CustomName:'[{"text":"Starlight Tumor","color":"red"}]'}
 
 # attach body parts
 summon block_display ~-0.5 ~-2 ~-0.5 {Tags:["shifter","body_bottom","phase1"],block_state:{Name:"minecraft:sculk",Properties:{}},transformation:[0.0000f,0.0000f,-5.6250f,2.8036f,0.0000f,0.9375f,0.0000f,-3.4188f,5.6250f,0.0000f,0.0000f,-2.8060f,0.0000f,0.0000f,0.0000f,1.0000f]}

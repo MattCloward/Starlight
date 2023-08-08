@@ -15,7 +15,7 @@ execute run effect give @s strength 999999 10 true
 execute run effect give @s jump_boost 999999 10 true
 execute run effect give @s speed 999999 3 true
 
-execute at @s run summon interaction ~ ~ ~ {height:5,width:5,response:true,Tags:["shifter","bodyinteraction"]}
+execute at @s run summon interaction ~ ~ ~ {height:5,width:5,response:true,Tags:["shifter","bodyinteraction"],CustomName:'[{"text":"Starlight Tumor","color":"red"}]'}
 
 # set health score
 execute at @s as @e[limit=1,sort=nearest,tag=shifter,tag=brain] store result score @s health run data get entity @s Health
